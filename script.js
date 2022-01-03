@@ -44,7 +44,7 @@ function itemRiscado(event) {
     event.target.classList.remove('completed'); // remover a classe após clique duplo
   } else {
     event.target.classList.add('completed'); // adicionar a classe após clique duplo
-  } 
+  }
 }
 orderedList.addEventListener('dblclick', itemRiscado);
 
@@ -63,7 +63,7 @@ apagarTudo.addEventListener('click', apagaTudo);
 const removeFinalizados = document.querySelector('#remover-finalizados');
 function removeItem() {
   const liTask = document.querySelectorAll('li');
-  for (let i = liTask.length -1 ; i >= 0; i -= 1) {
+  for (let i = liTask.length -1; i >= 0; i -= 1) {
     if (liTask[i].classList.contains('completed')) {
       orderedList.removeChild(liTask[i]);
     }
