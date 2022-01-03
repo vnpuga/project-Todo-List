@@ -38,21 +38,21 @@ orderedList.addEventListener('click', colorItemLi);
 
 // requisito 9
 // o método contais() retorna true ou false para o parâmetro buscado dentro de parênteses
-function itemRiscado(event){
+function itemRiscado(event) {
   const liTask = document.getElementsByTagName('li'); // recuperei li's
-  if(event.target.classList.contains('completed')) {
+  if (event.target.classList.contains('completed')) {
     event.target.classList.remove('completed'); // remover a classe após clique duplo
   } else {
     event.target.classList.add('completed'); // adicionar a classe após clique duplo
-  }  
+  } 
 }
 orderedList.addEventListener('dblclick', itemRiscado);
 
 // requisito 10
-let apagarTudo = document.querySelector('#apaga-tudo')
+const apagarTudo = document.querySelector('#apaga-tudo');
 function apagaTudo() {
   const liTask = document.querySelectorAll('li');
-  for(let i = 0; i < liTask.length; i += 1){
+  for (let i = 0; i < liTask.length; i += 1) {
     orderedList.removeChild(liTask[i]);
   }
 }
@@ -60,13 +60,13 @@ apagarTudo.addEventListener('click', apagaTudo);
 
 // requisito 11
 // gratidao ao grupo das mulheres pela dica de começar o for pelo final
-let removeFinalizados = document.querySelector('#remover-finalizados')
+const removeFinalizados = document.querySelector('#remover-finalizados');
 function removeItem() {
   const liTask = document.querySelectorAll('li');
-  for( let i = liTask.length -1 ; i >= 0; i -= 1) {
+  for (let i = liTask.length -1 ; i >= 0; i -= 1) {
     if (liTask[i].classList.contains('completed')) {
       orderedList.removeChild(liTask[i]);
     }
   }
 }
-removeFinalizados.addEventListener('click', removeItem)
+removeFinalizados.addEventListener('click', removeItem);
