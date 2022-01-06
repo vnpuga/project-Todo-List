@@ -70,3 +70,18 @@ function removeItem() {
   }
 }
 removeFinalizados.addEventListener('click', removeItem);
+
+// requisito 12, não teria conseguido fazer sem a ajuda do Kaique e Pedro #gratidao.
+// https://developer.mozilla.org/pt-BR/docs/Web/API/Element/innerHTML
+const salvarTarefas = document.querySelector('#salvar-tarefas');
+function salvar() {
+  localStorage.setItem('listaSalva', orderedList.innerHTML);  // setItem p/ salvar
+  //salvando no localStorage a chave 'listaSalva', com o valor orderedList.innerHTML (o .innerHTML descreve os elementos descentes da ol)
+}
+salvarTarefas.addEventListener('click', salvar);
+
+function recuperarListaSalva() {
+  orderedList.innerHTML = localStorage.getItem('listaSalva'); // getIem p/ recuperar
+  // atribuindo ao orderedList.innerHTML a chave 'listaSalva', que está armazenada no localStorage
+}
+window.onload = recuperarListaSalva();
