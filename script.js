@@ -75,8 +75,8 @@ removeFinalizados.addEventListener('click', removeItem);
 // https://developer.mozilla.org/pt-BR/docs/Web/API/Element/innerHTML
 const salvarTarefas = document.querySelector('#salvar-tarefas');
 function salvar() {
-  localStorage.setItem('listaSalva', orderedList.innerHTML);  // setItem p/ salvar
-  //salvando no localStorage a chave 'listaSalva', com o valor orderedList.innerHTML (o .innerHTML descreve os elementos descentes da ol)
+  localStorage.setItem('listaSalva', orderedList.innerHTML); // setItem p/ salvar
+  // salvando no localStorage a chave 'listaSalva', com o valor orderedList.innerHTML (o .innerHTML descreve os elementos descentes da ol)
 }
 salvarTarefas.addEventListener('click', salvar);
 
